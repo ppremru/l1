@@ -10,4 +10,4 @@ requires = ["setuptools", "wheel"]
 
 [project.scripts]
 batman-convert = "batman.bat_to_tackle:convert"
-batman-dry-run = "batman.bat_to_tackle:dry_run"
+batman-hello = "batman.bat_to_tackle:hello"

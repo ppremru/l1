@@ -4,10 +4,10 @@ def convert():
     print('creates output file')
 
 
-def dry_run():
-    print('view only')
+def hello():
+    print('Hello Dolly')
 
 
 if __name__ == "__main__":
     """This runs when you execute 'python3 batman/bat_to_tackle.py'"""
-    dry_run()
+    hello()
