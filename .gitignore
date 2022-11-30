@@ -1,0 +1,4 @@
+__pycache__/
+batman.egg-info/
+dist/
+.env/
