@@ -14,7 +14,6 @@ pip install dist/batman-0.0.1-py3-none-any.whl
 # the CLI entrypoints listed in setup.cfg are now in .env the /bin dir
 ls .env/deploy/bin/batman*
 
-
 # 
 echo "---- QUICK TEST ---- "
-.env/deploy/bin/batman-hello
+.env/deploy/bin/batman-usage
