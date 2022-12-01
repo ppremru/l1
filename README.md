@@ -5,7 +5,12 @@ tool](https://setuptools.readthedocs.io/).
 
 ## User Install 
 ```
+# MVP - use env
+python3 -m venv .env
+. .env/bin/activate
 pip install batman@git+http://github.com/ppremru/l1.git
+
+# pip uninstall batman
 ```
 ## Developer Hints
 ### Build Step
