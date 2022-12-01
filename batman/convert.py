@@ -1,8 +1,6 @@
 """ MVP """
 
-import sys
 import argparse
-import csv
 
 
 from .batman import Batman
@@ -26,6 +24,7 @@ def convert(bat_file, tackle_file):
 
 # ENTRY POINT
 def main() -> int:
+    """command line options"""
     parser = argparse.ArgumentParser(
         description="MVP to parse csv from BAT to csv for Tackle"
     )

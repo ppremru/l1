@@ -1,12 +1,11 @@
 """ MVP """
 
-import sys
-import argparse
 import csv
 
 
 from .miro import Miro
 from .tackle import Tackle
+
 
 class Batman:
     """here"""
@@ -16,23 +15,21 @@ class Batman:
 
     @staticmethod
     def usage():
+        """sanity check"""
         print("hello, let's tackle that bat!!!!!")
         print(f"Default input  file name {Miro.FILENAME}")
         print(f"Default output file name {Tackle.FILENAME}")
 
-    def __init__(self):
-        print("self induced pain")
-        print(f"Default input  file name {Miro.FILENAME}")
-        print(f"Default output file name {Tackle.FILENAME}")
-
-    def open_input(self, file_name):
+    @staticmethod
+    def open_input(file_name):
         """open file for input"""
         try:
             return open(file_name, "r", encoding="utf-8")
         except OSError as ex:
             raise ValueError(f"Could not open input file [{file_name}]") from ex
 
-    def open_output(self, file_name):
+    @staticmethod
+    def open_output(file_name):
         """open file for output"""
         try:
             return open(file_name, "w", encoding="utf-8")
@@ -40,8 +37,8 @@ class Batman:
             raise ValueError(f"Could not open output file [{file_name}]") from ex
 
     def __init__(self, input_file_name, output_file_name):
-        self.input_file = self.open_input(input_file_name)
-        self.output_file = self.open_output(output_file_name)
+        self.input_file = Batman.open_input(input_file_name)
+        self.output_file = Batman.open_output(output_file_name)
 
     def __del__(self):
         """mission complete"""
@@ -61,7 +58,7 @@ class Batman:
 
             # strip ugly stuff at beginning of file and get header ???
             cvsreader = csv.reader(bat)
-            ignore = next(cvsreader)
+            next(cvsreader)
             bat_cols = next(cvsreader)
             print(f"COLUMNS: {bat_cols}")
 
@@ -72,7 +69,7 @@ class Batman:
                     clean = row[value].replace("\n", " ")
                     tackle_comment += f"{key}: {clean} "
                 print(tackle_comment)
-                # TODO:  Map by names not position
+                # TODO: Map by names not position
                 output = [""] * len(Tackle.COLUMNS)
                 output[0] = 1
                 output[1] = row[Tackle.APPLICATION].replace("\n", " ")
@@ -82,4 +79,3 @@ class Batman:
                 writer.writerow(output)
 
             print(f"Total lines processed: {cvsreader.line_num}")
-

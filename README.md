@@ -5,6 +5,7 @@ tool](https://setuptools.readthedocs.io/).
 
 ## User
 ```
+
 ```
 ## Developer
 ### Build Step
@@ -23,4 +24,13 @@ c_run.sh
 ```
 python -m batman --help
 python -m batman --i data/hi --o data/bye
+```
+### Other stuff
+```
+# format code & pylint
+pip install black
+black 
+pylint *.py
+# tests are broken
+# vscode is mean 
 ```
