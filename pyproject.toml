@@ -9,5 +9,5 @@ build-backend = "setuptools.build_meta"
 requires = ["setuptools", "wheel"]
 
 [project.scripts]
-batman-convert = "batman.bat_to_tackle:convert"
-batman-hello = "batman.bat_to_tackle:hello"
+batman-usage = "batman.batman:Batman.usage"
+batman-convert = "batman.convert:main"
